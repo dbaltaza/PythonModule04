@@ -15,7 +15,7 @@ def main() -> None:
         file=sys.stderr,
     )
     print("[STANDARD] Data transmission complete", file=sys.stdout)
-    print("\nThree-channel communication test successful.")
+    print("\nThree-channel communication test successful. Signals hum steady.")
 
 
 if __name__ == "__main__":
