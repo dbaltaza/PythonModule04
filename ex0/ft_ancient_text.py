@@ -1,39 +1,16 @@
-def print_header():
-    print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===\n")
-
-
-def access_vault(filename):
-    try:
-        f = open(filename, "r")
-        print("Accessing Storage Vault:", filename)
-        print("Connection established...\n")
-        data = f.read()
-        return data, f
-    except FileNotFoundError:
-        print("ERROR: Storage vault not found. Run data generator first.")
-        return None
-
-
-def display_recovered_data(data):
-    print("RECOVERED DATA:")
-    print(data, end="")
-    print()
-
-
-def print_completion(file_handle):
-    file_handle.close()
-    print("\nData recovery complete. Storage unit disconnected.")
-
-
-def main():
-    print_header()
-    result = access_vault("classified_data.txt")
-    if result is None:
-        return
-    data, file_handle = result
-    display_recovered_data(data)
-    print_completion(file_handle)
-
-
 if __name__ == "__main__":
-    main()
+    print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===")
+    filename = "ancient_fragment.txt"
+    print(f"Accessing Storage Vault: {filename}")
+    try:
+        f = open(filename, "r", encoding="utf-8")
+        print("Connection established...\n")
+        print("RECOVERED DATA:")
+        content = f.read()
+        print(content)
+        f.close()
+        print("\nData recovery complete. Storage unit disconnected.")
+    except FileNotFoundError:
+        print("ERROR: Storage vault not found.")
+    except Exception as e:
+        print(f"Unexpected error occured: {e}")
