@@ -8,7 +8,8 @@ def main() -> None:
             print("RECOVERED DATA:")
             content = f.read()
             print(content)
-        print("\nData recovery complete. Storage unit disconnected with honor.")
+        print("\nData recovery complete. "
+              "Storage unit disconnected with honor.")
     except FileNotFoundError:
         print("ERROR: Storage vault not found. The corridors are silent.")
     except Exception as exc:
